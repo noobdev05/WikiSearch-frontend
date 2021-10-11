@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Home from "./Home";
+import "./App.css";
+import Result from "./Result";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
+  const [results, setResults] = useState([]);
+  const [query, setQuery] = useState("No results");
+  useEffect(() => {
+    console.log(results);
+  }, [results]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/results">
+            <Result results={results} query={query} />
+          </Route>
+          <Route path="/">
+            <Home setResults={setResults} setQuery={setQuery} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

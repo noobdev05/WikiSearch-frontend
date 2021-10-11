@@ -1,0 +1,27 @@
+.home {
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -60px;
+}
+.home > img {
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+}
+.home > h1 {
+  margin-bottom: 15px;
+}
+.home > input {
+  width: 35vw;
+  height: 25px;
+  outline: none;
+}
+.home > button {
+  margin: 15px;
+  width: 143px;
+  height: 30px;
+}
